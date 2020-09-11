@@ -13,6 +13,17 @@ router.get('/', (req, res, next) => {
         })
         .catch(next)
 })
+router.get('/:id/tasks', (req, res, next) => {
+    Projects.getProjectTasks()
+        .then(projectTasks => {
+            if (projectTasks.length) {
+                res.status(200).json(projectTasks)
+            } else {
+                res.status(400).json({ recipes: 'There is no tasks.' })
+            }
+        })
+        .catch(next)
+})
 router.post('/', (req, res, next) => {
     Projects.addProject(req.body)
         .then(count => {
