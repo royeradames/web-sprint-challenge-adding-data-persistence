@@ -24,8 +24,17 @@ function addResource(newResource) {
 function getResources () {
     return db('resources')
 }
+
+// adding projects.
+function addProject (newProject) {
+    /* http://knexjs.org/#Builder-insert
+       insert into resources (description)
+        values ('conference room A1')
+        ;
+    */
+}
 /*
-    adding projects.
+    
     retrieving a list of projects.
     adding tasks.
     retrieving a list of tasks. The list of tasks should include the project name and project description.
