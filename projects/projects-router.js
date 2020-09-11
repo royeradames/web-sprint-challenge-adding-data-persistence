@@ -11,10 +11,7 @@ router.get('/:id/recipes', (req, res) => {
                 res.status(400).json({ recipes: 'There is no recipes.' })
             }
         })
-        .catch(error => {
-            res.status(500).json({ error: error.message })
-
-        })
+        .catch(next)
 })
 
 

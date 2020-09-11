@@ -1,14 +1,17 @@
 const express = require('express');
 const helmet = require('helmet');
-const recipesRouter = require('./recipes/recipes-router')
-const ingredientsRouter = require('./ingredients/ingredients-router')
+const projectsRouter = require('./projects/projects-router')
 
 const server = express();
 
 server.use(helmet());
 server.use(express.json());
-server.use('/api/recipes', recipesRouter)
-server.use('/api/ingredients', ingredientsRouter)
+server.use((err, req, res, next) => {
+    console.log(err)
+    res.status(500).json(err.message)
+});
+
+server.use('/projects', projectsRouter)
 
 server.get('/', (req, res) => {
   
