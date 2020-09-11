@@ -9,10 +9,12 @@ module.exports = {
     getTasks
 }
 
-// all recipes in the system that utilize a single ingredient
+// adding resources.
 function addResource(resource_id) {
     /*
-       
+       insert into resources (description)
+        values ('conference room A1')
+        ;
     */
     
 }
