@@ -2,7 +2,7 @@ const express = require('express')
 const Projects = require('./projects-module')
 const router = express.Router()
 
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
     Projects.getProjects()
         .then(projects => {
             if (projects.length) {

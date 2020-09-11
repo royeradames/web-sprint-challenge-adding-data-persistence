@@ -15,7 +15,7 @@ server.use('/projects', projectsRouter)
 
 server.get('/', (req, res) => {
   
-    res.status(200).json({message: `Welcome to the API build by Royer Adames`});
+    res.status(200).json({message: `Welcome to the web-sprint-challenge-adding-data-persistence API build by Royer Adames`});
   
 });
 
