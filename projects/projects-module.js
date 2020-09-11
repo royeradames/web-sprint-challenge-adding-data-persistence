@@ -59,5 +59,8 @@ function getTasks () {
             on p.id = t.project_id
         ;
     */
+   return db('projects as p')
+   .join('tasks as t', 'p.id', 't.project_id')
+   .select('p.project_name', 'p.description', 't.*')
 
 }
