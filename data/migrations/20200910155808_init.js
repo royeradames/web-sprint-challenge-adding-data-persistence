@@ -1,16 +1,16 @@
 
 exports.up = function (knex) {
     return knex.schema
-        .createTable('recipes', tbl => {
+        .createTable('projects', tbl => {
             tbl.increments()
             tbl.string('recipe_name').notNullable()
         })
-        .createTable('ingredients', tbl => {
+        .createTable('resources', tbl => {
             tbl.increments()
             tbl.string('ingredient_name').notNullable()
 
         })
-        .createTable('steps', tbl => {
+        .createTable('tasks', tbl => {
             tbl.increments()
             tbl.text('step', 'mediumtext').notNullable()
             tbl.integer('recipe_id')
@@ -21,7 +21,7 @@ exports.up = function (knex) {
             .onUpdate('CASCADE')
             tbl.integer('order').notNullable()
         })
-        .createTable('recipes_ingredients', tbl => {
+        .createTable('projects_resources', tbl => {
             tbl.increments()
 
             //foreign key 
@@ -46,8 +46,8 @@ exports.up = function (knex) {
 // drop tables in the opposite way they where added
 exports.down = function (knex) {
     return knex.schema
-    .dropTableIfExists('recipes_ingredients')
-    .dropTableIfExists('steps')
-    .dropTableIfExists('ingredients')
-    .dropTableIfExists('recipes')
+    .dropTableIfExists('projects_resources')
+    .dropTableIfExists('tasks')
+    .dropTableIfExists('resources')
+    .dropTableIfExists('projects')
 }
