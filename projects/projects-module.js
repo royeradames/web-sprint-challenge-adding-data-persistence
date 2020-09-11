@@ -35,8 +35,17 @@ function addProject(newProject) {
     return db('projects')
         .insert({ project_name: newProject })
 }
-/*
 
+function getProjects () {
+    return db('projects')
+}
+
+function addTask (newTask) {
+    return db('projects')
+        .insert({ project_name: newProject })
+}
+
+/*
     retrieving a list of projects.
     adding tasks.
     retrieving a list of tasks. The list of tasks should include the project name and project description.
