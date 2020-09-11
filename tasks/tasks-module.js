@@ -13,7 +13,7 @@ function addTask(newTask) {
         values('Interview Questions', 1)
         ;
     */
-    return db('projects')
+    return db('tasks')
         .insert(newTask)
 }
 // retrieving a list of tasks. The list of tasks should include the project name and project description.
