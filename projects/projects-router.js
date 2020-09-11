@@ -2,8 +2,8 @@ const express = require('express')
 const Projects = require('./projects-module')
 const router = express.Router()
 
-router.get('/:id/recipes', (req, res) => {
-    Projects.getIngredientForRecipes(req.params.id)
+router.get('/', (req, res) => {
+    Projects.getProjects()
         .then(recipes => {
             if (recipes.length) {
                 res.status(200).json(recipes)
