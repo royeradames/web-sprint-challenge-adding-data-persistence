@@ -36,6 +36,5 @@ function getProjectTasks (projectId) {
     return db('projects as p')
     .join('tasks as t', 't.project_id', 'p.id')
     .where('p.id', projectId)
-    .select('*')
 
 }
