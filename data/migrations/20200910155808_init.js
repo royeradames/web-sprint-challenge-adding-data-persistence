@@ -16,7 +16,8 @@ exports.up = function (knex) {
             tbl.string('description').notNullable()
             tbl.text('notes')
             tbl.boolean('task_completed').notNullable().defaultTo('false')
-            tbl.string('project_id').notNullable()
+            tbl.string('project_id')
+                .notNullable()
                 .unsigned()
                 .references('projects.id')//shorthand
                 .onDelete('RESTRICT')
@@ -30,13 +31,13 @@ exports.up = function (knex) {
                 .unsigned()
                 .notNullable()
                 .references('id')//links the id of questions table
-                .inTable('recipes')//links question table
+                .inTable('projects')//links question table
                 .onDelete('RESTRICT')//parent needs to be deleted before this field is delete
                 .onUpdate('CASCADE')//if this field is update it, it's updated it on the whole database where it appears
             tbl.integer('resource_id')
                 .unsigned()
                 .notNullable()
-                .references('ingredients.id')//shorthand
+                .references('resources.id')//shorthand
                 .onDelete('RESTRICT')
                 .onUpdate('CASCADE')
 
