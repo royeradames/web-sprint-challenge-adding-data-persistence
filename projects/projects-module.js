@@ -20,9 +20,11 @@ function addResource(newResource) {
         .insert({description:newResource})
 }
 
+// retrieving a list of resources.
+function getResources () {
+    return db('resources')
+}
 /*
-    adding resources.
-    retrieving a list of resources.
     adding projects.
     retrieving a list of projects.
     adding tasks.
