@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
         .catch(next)
 })
 router.get('/:id/tasks', (req, res, next) => {
-    Projects.getProjectTasks()
+    Projects.getProjectTasks(req.params.id)
         .then(projectTasks => {
             if (projectTasks.length) {
                 res.status(200).json(projectTasks)
