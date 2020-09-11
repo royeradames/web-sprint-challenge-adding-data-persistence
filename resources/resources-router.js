@@ -3,7 +3,7 @@ const Projects = require('./resources-module')
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-    Projects.getProjects()
+    Projects.getResources()
         .then(projects => {
             if (projects.length) {
                 res.status(200).json(projects)
@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
         .catch(next)
 })
 router.post('/', (req, res, next) => {
-    Projects.addProject(req.body)
+    Projects.addResource(req.body)
         .then(count => {
             res.status(200).json(count)
         })
