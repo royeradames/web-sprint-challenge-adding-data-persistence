@@ -14,7 +14,7 @@ function addTask(newTask) {
         ;
     */
     return db('projects')
-        .insert({ project_name: newProject })
+        .insert(newTask)
 }
 // retrieving a list of tasks. The list of tasks should include the project name and project description.
 function getTasks () {
