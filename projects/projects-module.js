@@ -36,11 +36,16 @@ function addProject(newProject) {
         .insert({ project_name: newProject })
 }
 
-function getProjects () {
+function getProjects() {
     return db('projects')
 }
 
-function addTask (newTask) {
+function addTask(newTask) {
+    /*
+        insert into tasks(description, project_id)
+        values('Interview Questions', 1)
+        ;
+    */
     return db('projects')
         .insert({ project_name: newProject })
 }
