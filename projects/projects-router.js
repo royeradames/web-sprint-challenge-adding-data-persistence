@@ -4,11 +4,11 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
     Projects.getProjects()
-        .then(recipes => {
-            if (recipes.length) {
-                res.status(200).json(recipes)
+        .then(projects => {
+            if (projects.length) {
+                res.status(200).json(projects)
             } else {
-                res.status(400).json({ recipes: 'There is no recipes.' })
+                res.status(400).json({ recipes: 'There is no projects.' })
             }
         })
         .catch(next)
