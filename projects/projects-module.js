@@ -32,8 +32,9 @@ function addProject(newProject) {
         values ('web-sprint-challenge-adding-data-persistence')
         ;
     */
+   console.log(newProject)
     return db('projects')
-        .insert({ project_name: newProject })
+        .insert(newProject)
 }
 
 //retrieving a list of projects.
