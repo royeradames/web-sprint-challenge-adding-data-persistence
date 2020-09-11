@@ -17,24 +17,26 @@ function addResource(newResource) {
         ;
     */
     return db('resources')
-        .insert({description:newResource})
+        .insert({ description: newResource })
 }
 
 // retrieving a list of resources.
-function getResources () {
+function getResources() {
     return db('resources')
 }
 
 // adding projects.
-function addProject (newProject) {
+function addProject(newProject) {
     /* http://knexjs.org/#Builder-insert
-       insert into resources (description)
-        values ('conference room A1')
+       insert into projects (project_name)
+        values ('web-sprint-challenge-adding-data-persistence')
         ;
     */
+    return db('projects')
+        .insert({ project_name: newProject })
 }
 /*
-    
+
     retrieving a list of projects.
     adding tasks.
     retrieving a list of tasks. The list of tasks should include the project name and project description.
