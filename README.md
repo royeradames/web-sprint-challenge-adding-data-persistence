@@ -54,7 +54,7 @@ to indentify a specific records and to avoid anomalies
 3. What is the name given to a table column that references the primary key on another table.
 foreign key
 4. What do we need in order to have a _many to many_ relationship between two tables.
-
+A table in the middle that has not being accounted for
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions
