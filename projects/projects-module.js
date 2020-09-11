@@ -10,13 +10,14 @@ module.exports = {
 }
 
 // adding resources.
-function addResource(resource_id) {
-    /*
+function addResource(newResource) {
+    /* http://knexjs.org/#Builder-insert
        insert into resources (description)
         values ('conference room A1')
         ;
     */
-    
+    return db('resources')
+        .insert({description:newResource})
 }
 
 /*
